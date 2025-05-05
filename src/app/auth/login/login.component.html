@@ -10,7 +10,8 @@
         name="email" 
         ngModel 
         required 
-        email 
+        email
+        #email="ngModel"
       />
     </div>
 
@@ -22,10 +23,21 @@
         name="password" 
         ngModel 
         required 
-        minlength="6" 
+        minlength="6"
+        #password="ngModel"
       />
     </div>
 
     <button class="button">Login</button>
   </div>
+
+  @if (
+    form.form.invalid && 
+    email.touched &&
+    password.touched
+  ) {
+    <p class="control-error">
+      Invalid values detected. Please your check your inputs.
+    </p>
+  }
 </form>
