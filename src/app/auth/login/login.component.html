@@ -32,8 +32,8 @@
   </div>
 
   @if (
-    email.touched &&
-    email.dirty &&
+    (email.touched ||
+    email.dirty) &&
     email.invalid
   ) {
     <p class="control-error">
@@ -42,8 +42,8 @@
   }
 
   @if (
-    password.touched &&
-    password.dirty &&
+    (password.touched ||
+    password.dirty) &&
     password.invalid
   ) {
     <p class="control-error">
